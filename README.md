@@ -1,7 +1,7 @@
 
 # Chat de conversa
 
-O projeto é um chat de conversa, onde são utilizados conceitos de "flex", "grid" e responsividade.
+Projeto de um chat de conversa, onde são utilizados conceitos de "flex", "grid" e responsividade.
 
 ## O que foi usado
 ![Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
