@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --background-page: #1a1924;
+  --primary-color: #e1e1e6;
+  --status-color: #00B37E;
+  --color-message: #633BBC;
+  --color-your-message: #07847E;
+  --background-input: #282843;
+}
+
+body {
+  background: var(--background-page);
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  height: 100vh;
+  overflow: hidden;
+}
+
+body * {
+  font-family: 'Roboto', sans-serif;
+}
+
+#app {
+  padding: 2.4rem 3.2rem;
+
+  height: 100vh;
+  width: 100vw;
+  max-width: 88rem;
+
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  margin: auto;
+}
+
+#top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+#user-info img {
+  width: 4.8rem;
+  height: 4.8rem;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#user-status .status {
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+
+  margin-top: .4rem;
+}
+
+#user-status .status::before {
+  content: '';
+  width: .8rem;
+  height: .8rem;
+  display: block;
+  background-color: var(--status-color);
+  border-radius: 50%;
+}
+
+#user-status .status {
+  color: var(--status-color);
+  font-size: 1.2rem;
+}
+
+#last-seen {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+
+  margin-top: 2.6rem;
+  text-align: center;
+}
+
+#messages {
+  overflow-y: scroll;
+  padding-bottom: 2.4rem;
+}
+
+#messages::-webkit-scrollbar {
+  display: none;
+}
+
+.messages {
+  margin-top: 3rem;
+  display: grid;
+  gap: 3rem;
+
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.message .body {
+  width: fit-content;
+  margin-top: 1rem;
+  background-color: var(--color-message);
+  padding: 1.4rem;
+  border-radius: 0 .8rem .8rem .8rem;
+}
+
+.message:not(.you) {
+  width: 60vw;
+}
+
+.message.you {
+  margin-left: auto;
+}
+
+.message.you .top {
+  text-align: right;
+}
+
+.message.you .body {
+  background-color: var(--color-your-message);
+  border-radius: .8rem .8rem 0 .8rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+
+  background-color: var(--background-input);
+  border-radius: 999rem;
+  padding: 1.4rem;
+}
+
+form:focus-within {
+  outline: .2rem solid var(--primary-color);
+}
+
+form input {
+  flex: 1;
+  outline: none;
+}
+
+form input::placeholder {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: var(--primary-color);
+}
+
+form button i {
+ color: var(--primary-color);
+ font-size: 2.4rem;
+}
+
+form button i:hover,
+#close-chat{
+  cursor: pointer;
+}
+
+input,
+button {
+  background: transparent;
+  border: none;
+}
